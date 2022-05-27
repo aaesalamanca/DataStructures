@@ -2,7 +2,7 @@
 
 public class MyStack<T>
 {
-    Entry _top;
+    Entry? _top;
 
     public void Push(T data) => _top = new Entry
     {
@@ -20,7 +20,7 @@ public class MyStack<T>
 
     class Entry
     {
-        public Entry Next { get; set; }
+        public Entry? Next { get; set; }
         public T Data { get; set; }
     }
 }
