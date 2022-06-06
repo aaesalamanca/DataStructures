@@ -1,6 +1,7 @@
 ﻿using DataStructures;
 
 UsingMyStack();
+UsingMyList();
 
 static void UsingMyStack()
 {
@@ -23,4 +24,20 @@ static void UsingMyStack()
     Console.WriteLine(myStringStack.Pop());
     Console.WriteLine(myStringStack.Pop());
     Console.WriteLine(myStringStack.Pop());
+}
+
+static void UsingMyList()
+{
+    var myIntList = new MyList<int>();
+
+    myIntList.Changed += (sender, args) => Console.WriteLine("Item added to MyList<int>.");
+
+    myIntList.Add(1);
+    myIntList.Add(2);
+    myIntList.Add(3);
+
+    for (int i = 0; i < myIntList.Count; i++)
+        Console.WriteLine(myIntList[i]);
+    
+    myIntList[3] = 4;
 }
